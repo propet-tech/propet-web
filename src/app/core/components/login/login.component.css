@@ -1,0 +1,103 @@
+.main_login {
+    display        : flex;
+    flex-direction : column;
+    align-content  : center;
+    justify-content: center;
+    align-items    : center;
+    width          : 15rem;
+}
+
+.hero_img img {
+    width     : 100%;
+    height    : 100vh;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    .form_form {
+        position: absolute;
+        z-index : 555;
+    }
+}
+
+.p-error {
+    color       : #f44336;
+    padding-left: 5px;
+}
+
+.main_login {
+    display        : flex;
+    flex-direction : column;
+    align-content  : center;
+    justify-content: center;
+    align-items    : center;
+}
+
+.hero_img img {
+    width     : 100%;
+    height    : 100vh;
+    object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+    .form_form {
+        position: absolute;
+        z-index : 555;
+    }
+}
+
+.p-error {
+    color: #f44336;
+}
+
+.actions {
+    display        : flex;
+    flex-direction : row;
+    flex-wrap      : nowrap;
+    justify-content: space-between;
+    width          : 254px;
+}
+
+a {
+    text-decoration: none!important;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+    .form_form {
+        position     : absolute;
+        z-index      : 555;
+        background   : #FFF;
+        padding      : 5rem;
+        border-radius: 10px;
+        width: 75vw!important;
+    }
+
+    .act_main {
+        align-items    : center;
+        justify-content: center;
+    }
+
+    .hero_bg{
+        width: 100vw!important;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .form_form {
+        position     : absolute;
+        z-index      : 555;
+        background   : #FFF;
+        padding      : 2rem;
+        border-radius: 10px;
+        width: 85vw!important;
+    }
+
+    .act_main {
+        align-items    : center;
+        justify-content: center;
+    }
+}

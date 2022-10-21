@@ -1,0 +1,23 @@
+.navbar-custom {
+    background-color:#a8201a;
+    box-shadow: var(--ct-box-shadow);
+    padding: 0 10px 0 0;
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 70px;
+    z-index: 1001;
+    height: 100px;
+  }
+  .fe-settings:before {
+    content: "\e8c3";
+    color: white;
+}
+.dropdown-toggle:empty::after {
+    margin-left: 0;
+    color: white;
+}
+.fe-menu:before {
+    content: "\e88f";
+    color: white;
+}

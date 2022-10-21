@@ -1,0 +1,45 @@
+
+.merch_01 {
+    z-index: 99;
+    position: absolute;
+    margin-top: 255px;
+}
+
+.btn{
+    border-radius: 6px;
+}
+
+.btn-seccondary{
+    background-color: rgba(9,30,66,0.04);
+    color: #42526E !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.btn-seccondary:hover{
+    background-color: rgba(9, 30, 66, 0.158)!important;
+    color: #42526E !important;
+}
+
+#sidebar-menu .menu-title {
+    padding: 10px 20px;
+    letter-spacing: .05em;
+    pointer-events: none;
+    cursor: default;
+    font-size: .6875rem;
+    text-transform: uppercase;
+    color: #980f00;
+    font-weight: 500;
+}
+
+.bi{
+    font-size: 12pt;
+    margin-right: 10px;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}

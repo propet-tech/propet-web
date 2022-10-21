@@ -1,0 +1,39 @@
+.breadcrumb > li + li:before {
+    color: rgb(39, 39, 39);
+    content: "/ ";
+    padding: 0 5px;
+    font-weight: bold;
+}
+.bg-blue{
+    background-color: #174D74!important;
+    border: 1px solid #174D74;
+  }
+  
+  .breadcrumb > li + li:before {
+    color: rgb(39, 39, 39);
+    content: "/ ";
+    padding: 0 5px;
+    font-weight: bold;
+  }
+  
+  .form-control {
+    border-radius: 10px;
+  }
+  .d-flex {
+    display: flex!important;
+    justify-content: space-between;
+}
+  
+  .card {
+    box-shadow   : var(--ct-card-box-shadow);
+    margin-bottom: 24px;
+    border-radius: 15px;
+  }
+    
+  .brd-6{
+    border-radius: 6px;
+  }
+  
+  .bi-people-fill{
+    width: 80%;
+  }

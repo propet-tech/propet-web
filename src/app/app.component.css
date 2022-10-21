@@ -1,0 +1,10 @@
+.navbar-custom {
+  background-color: #ededed;
+  box-shadow: var(--ct-box-shadow);
+  padding: 0 10px 0 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 70px;
+  z-index: 1001;
+}
