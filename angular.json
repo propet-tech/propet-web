@@ -28,6 +28,7 @@
               "src/styles.css",
               "src/assets/css/app-rtl.min.css",
               "src/assets/css/app.css",
+              "node_modules/ngx-toastr/toastr.css",
               "src/assets/css/app.min.css",
               "src/assets/css/bootstrap-rtl.min.css",
               "src/assets/css/bootstrap.css",
