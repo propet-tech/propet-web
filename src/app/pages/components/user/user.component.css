@@ -1,0 +1,4 @@
+.col_text{
+    display: flex;
+    justify-content: space-evenly;
+}
