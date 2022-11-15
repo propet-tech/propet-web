@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { Pet } from 'src/app/pages/model/pet.model';
+import { PetService } from 'src/app/pages/service/pet.service';
 
 @Component({
   selector: 'app-pet-list',
@@ -7,16 +9,27 @@ import { Pet } from 'src/app/pages/model/pet.model';
   styleUrls: ['./pet-list.component.css']
 })
 export class PetListComponent implements OnInit {
-  users: Pet[] = [
-    { id: 1, name: 'batata', clientId: '1', description: "teste",  weight: 10 },
-    { id: 1, name: 'batata', clientId: '1', description: "teste",  weight: 10 },
-    { id: 1, name: 'batata', clientId: '1', description: "teste",  weight: 10 },
-    { id: 1, name: 'batata', clientId: '1', description: "teste",  weight: 10 },
-    { id: 1, name: 'batata', clientId: '1', description: "teste",  weight: 10 },
-  ]
-  constructor() { }
+  users: Pet[] = []
+  constructor(
+    private petService: PetService,
+    private notification: ToastrService,
+  ) { }
 
   ngOnInit(): void {
+    this.getAll()
+  }
+  public delete(id: any){
+    console.log(id)
+    this.petService.delete(parseInt(id)).subscribe(
+      (response) => { this.notification.success(`O pet foi excluido`, 'Sucesso')},
+      error => {this.notification.error('Algo não ocorreu bem', 'ERROR')}
+    )
+  }
+  getAll(){
+    this.petService.getAll().subscribe(
+      (response: any) => {this.users = response.content},
+      error => {this.notification.error('Algo não ocorreu bem', 'ERROR')}
+    )
   }
 
 }

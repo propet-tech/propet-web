@@ -24,16 +24,24 @@ export class PetFormComponent implements OnInit {
   buildPetForm() {
     this.PetForm = this.formBuilder.group({
       name: [''],
-      userId: [''],
+      clientId: [''],
       weight: [''],
       description: [''],
+      category: [''],
+      breed: {
+        id: [''],
+        type: [''],
+        name: ['']
+
+      },
     })
   }
   back(){
     this.router.navigate(['pet'])
   }
   create(){
-   this.petService.Create(this.PetForm.value).subscribe(
+    console.log(this.PetForm.value)
+   this.petService.create(this.PetForm.value).subscribe(
       (response) => {this.back(), this.notification.success(`Pet ${this.PetForm.value.name }criado`, 'Sucesso')},
       error => {debugger}
     )

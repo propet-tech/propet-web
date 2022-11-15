@@ -1,0 +1,28 @@
+.select {
+    word-wrap: normal;
+    height: 52%;
+    width: 95%;
+    border-radius: 8.2rem;
+}
+.h6_{
+    font-size: larger;
+    font-size: large;
+    color: black;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    padding: 0.45rem 0.9rem;
+    font-size: .84rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #000000;
+    background-color: var(--ct-input-bg);
+    background-clip: padding-box;
+    border: 1px solid #212529;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: 8.2rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}

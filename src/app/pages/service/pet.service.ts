@@ -10,7 +10,13 @@ export class PetService {
 ​
   constructor( private http: HttpClient) {}
 ​
-  Create(pet: Pet){
+  create(pet: Pet){
     return this.http.post<Pet>(`${environment.api}/pet`, pet)
+  }
+  getAll(){
+    return this.http.get<any[]>(`${environment.api}/pet?page=${0}&size=${10}`, )
+  }
+  delete(id:number){
+    return this.http.delete(`${environment.api}/pet/${id}`)
   }
 }

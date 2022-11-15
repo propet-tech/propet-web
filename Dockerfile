@@ -1,5 +1,5 @@
 # Build ProPet Web
-FROM node:alpine AS builder
+FROM node:18-alpine3.15 AS builder
 WORKDIR /app
 COPY . .
 RUN ["npm", "install"]
@@ -9,5 +9,5 @@ RUN ["npm", "run", "build", "--omit=dev"]
 FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 RUN ["rm", "-rf", "./*"]
-COPY --from=builder /app/dist/angular-app .
+COPY --from=builder /app/dist/pro-pet-front-end .
 ENTRYPOINT ["nginx", "-g", "daemon off;"]

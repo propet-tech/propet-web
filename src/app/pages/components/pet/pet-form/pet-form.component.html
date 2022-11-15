@@ -31,20 +31,20 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <h6>Nome do Pet</h6>
+                                                    <h6 class="h6_">Nome do Pet</h6>
                                                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="name">
                                                   </div><br>
     
                                             </div>
                                             <div class="col-2">
                                                 <div class="form-group">
-                                                    <h6>Id do cliente</h6>
-                                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="userId">
+                                                    <h6 class="h6_">Id do cliente</h6>
+                                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="clientId">
                                                   </div><br>
                                             </div>
                                             <div class="col-2">
                                                 <div class="form-group">
-                                                    <h6>Tamanho</h6>
+                                                    <h6 class="h6_">Tamanho</h6>
                                                     <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="weight">
                                                   </div><br>
                                             </div>
@@ -53,10 +53,45 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">
-                                                    <h6>Descrição</h6>
+                                                    <h6 class="h6_">Descrição</h6>
                                                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="description">
                                                   </div><br>
                                             </div>        
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <h6 class="h6_">Categoria</h6>
+                                                <select  class="select" name="opcoes" id="select"  formControlName="category">
+                                                    <option value="BIG">Grande</option>
+                                                    <option value="MEDIUM">Medio</option>
+                                                    <option value="SMALL">Pequeno</option>
+ 
+                                                 </select>
+                                            </div>
+                                            <div class="col">
+                                                <h6 class="h6_">Tipo</h6>
+                                                <select  class="select" name="opcoes" id="select"  formControlName="type">
+                                                    <option value="CAT">Gato</option>
+                                                    <option value="DOG">Cachorro</option>
+ 
+                                                 </select>
+                                            </div>
+                                        </div><br>
+
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <h6 class="h6_">ID da raça</h6>
+                                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="id">
+                                                  </div>
+                                            </div>
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <h6 class="h6_">Nome</h6>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="description">
+                                                  </div>
+                                            </div>
                                         </div>
                                     </form>
                                     
