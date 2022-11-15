@@ -6,22 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SidebarComponent } from './core/components/layout/sidebar/sidebar.component';
 import { NavbarComponent } from './core/components/layout/navbar/navbar.component';
-import { HomeComponent } from './pages/components/home/home.component';
-import { UserComponent } from './pages/components/user/user.component';
+import { PetListComponent } from './pages/components/pet/pet-list/pet-list.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     NavbarComponent,
-    HomeComponent,
-    UserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

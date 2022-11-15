@@ -1,0 +1,96 @@
+<div id="wrapper">
+    <div class="content-page" style="margin-top: 125px!important; margin: 0 0 0 240px;">
+        <div class="content">
+
+            <!-- Start Content-->
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                                <ol class="breadcrumb m-0">
+                                    <li class="breadcrumb-item"><a>Home</a></li>
+                                    <li class="breadcrumb-item"><a>Pets</a></li>
+                                    <li class="breadcrumb-item active">Novo Pet</li>
+                                </ol>
+                            </div>
+                            <h4 class="page-title mb-1">Novo Pet</h4>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- end page title -->
+
+                <div class="row">
+                    <div class="row mt-3">
+                          <div class="col-12">
+                            <div div class="card">
+                                <div class="card-body">
+                                    <form [formGroup]="PetForm">
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <h6>Nome do Pet</h6>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="name">
+                                                  </div><br>
+    
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-group">
+                                                    <h6>Id do cliente</h6>
+                                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="userId">
+                                                  </div><br>
+                                            </div>
+                                            <div class="col-2">
+                                                <div class="form-group">
+                                                    <h6>Tamanho</h6>
+                                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="weight">
+                                                  </div><br>
+                                            </div>
+                                            
+                                        </div>
+                                        <div class="row">
+                                            <div class="col">
+                                                <div class="form-group">
+                                                    <h6>Descrição</h6>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="description">
+                                                  </div><br>
+                                            </div>        
+                                        </div>
+                                    </form>
+                                    
+                                    <div class="col-lg-0">
+                                        <div class="d-flex flex-wrap align-items-center">
+                                            <div class="col-sm-2 d-flex flex-row">
+                                                <a  (click)="back()" class="btn btn-primary d-flex justify-content-center align-items-center m-1">
+                                                    <svg style="margin-right: .5rem;" xmlns="http://www.w3.org/2000/svg"
+                                                        width="16" height="16" fill="currentColor"
+                                                        class="bi bi-chevron-left mr-2" viewBox="0 0 16 16">
+                                                        <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+                                                    </svg>
+                                                    Voltar
+                                                </a>
+                                                <button (click)="create()" class="btn btn-danger d-flex justify-content-center align-items-center m-1">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                        fill="currentColor" class="bi bi-device-ssd-fill"
+                                                        viewBox="0 0 16 16">
+                                                        <path d="M5 8V4h6v4H5Z" />
+                                                        <path d="M4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4Zm0 1.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0Zm9 0a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0ZM3.5 11a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1Zm9.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0ZM4.75 3h6.5a.75.75 0 0 1 .75.75v4.5a.75.75 0 0 1-.75.75h-6.5A.75.75 0 0 1 4 8.25v-4.5A.75.75 0 0 1 4.75 3ZM5 12h6a1 1 0 0 1 1 1v2h-1v-2h-.75v2h-1v-2H8.5v2h-1v-2h-.75v2h-1v-2H5v2H4v-2a1 1 0 0 1 1-1Z" />
+                                                    </svg>
+                                                    Salvar
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- end col -->
+            </div>
+        </div>
+    </div>
+  </div>
+  <!-- end row -->

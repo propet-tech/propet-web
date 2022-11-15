@@ -2,3 +2,13 @@ element.style {
     border-radius: 11px;
     margin-top: 40px;
 }
+*menu-title {
+    padding: 10px 20px;
+    letter-spacing: .05em;
+    pointer-events: none;
+    cursor: default;
+    font-size: .6875rem;
+    text-transform: uppercase;
+    color: #a8201a;
+    font-weight: 400;
+}

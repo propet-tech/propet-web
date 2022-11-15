@@ -1,5 +1,7 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { NotificationService } from '../../service/notify.Service';
 
 @Component({
@@ -11,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private notification: ToastrService
   ) {
     
    }
@@ -19,6 +22,7 @@ export class LoginComponent implements OnInit {
   }
   navigate(){
     this.router.navigate([''])
+    this.notification.success('login efetuado',  'Sucesso!!!')
   }
 
 }

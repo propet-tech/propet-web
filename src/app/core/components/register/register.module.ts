@@ -6,7 +6,7 @@ import {  registerRoutingModule } from './register-routing.module';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register.component';
-// import { ToastrModule } from 'ngx-toastr';
+ import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { RegisterComponent } from './register.component';
     registerRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    // ToastrModule
+    ToastrModule
   ]
 })
 export class registerModule { }
