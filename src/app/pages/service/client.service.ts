@@ -26,6 +26,10 @@ export class ClientService {
 
         return this.http.get<Page<Client>>(`${environment.api}/client`, {params: httpParams});
     }   
+
+    getCount(){
+        return this.http.get<number>(`${environment.api}/client/count`)
+    }
 }
 
 export interface Params {

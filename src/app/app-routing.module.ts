@@ -13,9 +13,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/components/user/user.module').then(m => m.UserModule),
     canActivate: [AuthGuard]
   },
-  { path: 'login',  loadChildren: () => import('./core/components/login/login.module').then(m => m.LoginModule) },
-  { path: 'register',   loadChildren: () => import('./core/components/register/register.module').then(m => m.registerModule)},
-  { path: 'pet',   loadChildren: () => import('./pages/components/pet/pet.module').then(m => m.PetModule)},
+ // { path: 'login',  loadChildren: () => import('./core/components/login/login.module').then(m => m.LoginModule)},
+ // { path: 'register',   loadChildren: () => import('./core/components/register/register.module').then(m => m.registerModule),  canActivate: [AuthGuard]},
+  { path: 'pet',   loadChildren: () => import('./pages/components/pet/pet.module').then(m => m.PetModule),  canActivate: [AuthGuard]},
+  { path: 'service',   loadChildren: () => import('./pages/components/service/service.module').then(m => m.ServiceModule),  canActivate: [AuthGuard]},
 ];
 
 @NgModule({

@@ -19,4 +19,7 @@ export class PetService {
   delete(id:number){
     return this.http.delete(`${environment.api}/pet/${id}`)
   }
+  getCountPet(){
+    return this.http.get<number>(`${environment.api}/pet/count`)
+  }
 }
