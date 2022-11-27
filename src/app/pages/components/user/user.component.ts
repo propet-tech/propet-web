@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../../model/user.model';
+import { KeycloakService } from 'keycloak-angular';
+import { NotificationService } from 'src/app/core/service/notify.Service';
+import { ClientDataSource } from '../../datasource/client-datasource';
+import { Client } from '../../model/client.model';
+import { ClientService } from '../../service/client.service';
 
 @Component({
   selector: 'app-user',
@@ -7,16 +11,18 @@ import { User } from '../../model/user.model';
   styleUrls: ['./user.component.css']
 })
 export class UserComponent implements OnInit {
-  users: User[] = [
-    { id: 1, name: 'batata', status: true, pet: 'batinha', number: 9 },
-    { id: 2, name: 'henri', status: true, pet: 'fil', number: 1 },
-    { id: 3, name: 'theo', status: true, pet: 'gatinho', number: 9 },
-    { id: 4, name: 'deibi', status: true, pet: 'cachorro', number: 5 }
-  ]
-  constructor() { }
+
+  displayedColumns: string[] = ['name'];
+  dataSource = new ClientDataSource(this.clientService, this.notify);
+
+  constructor(
+    private clientService: ClientService,
+    private notify: NotificationService,
+        private key: KeycloakService
+  ) { }
 
   ngOnInit(): void {
-    console.log(this.users)
+    this.dataSource.load()
   }
 
 }

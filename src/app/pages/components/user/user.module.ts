@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
 import { UserComponent } from './user.component';
-
+import {MatTableModule} from '@angular/material/table'; 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { KeycloakBearerInterceptor } from 'keycloak-angular';
 
 @NgModule({
   declarations: [
@@ -11,7 +13,16 @@ import { UserComponent } from './user.component';
   ],
   imports: [
     CommonModule,
-    UserRoutingModule
-  ]
+    UserRoutingModule,
+    MatTableModule,
+  ],
+    providers: [
+{
+      provide: HTTP_INTERCEPTORS,
+      useClass: KeycloakBearerInterceptor,
+      multi: true
+    }
+
+    ]
 })
 export class UserModule { }

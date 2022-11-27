@@ -22,25 +22,6 @@ export class AuthGuard extends KeycloakAuthGuard {
       });
     }
 
-    // Get the roles required from the route.
-    const requiredRoles = route.data['roles'];
-
-    let granted = false;
-
-    // Allow the user to to proceed if no additional roles are required to access the route.
-    if (!(requiredRoles instanceof Array) || requiredRoles.length === 0) {
-      granted = true;
-      return granted;
-    }
-
-    // Allow the user to proceed if all the required roles are present.
-    granted = requiredRoles.every((role) => this.roles.includes(role));
-
-    // Routing user into permission denied view if don't have necessary roles.
-    if (!granted) {
-      await this.router.navigate(['permission-denied']);
-    }
-
-    return granted;
+    return this.authenticated;
   }
 }
