@@ -32,3 +32,12 @@
     color: white;
     font-family: monospace;
  }
+ .col_text{
+    display: flex;
+    justify-content: space-evenly;
+}
+.fa, .fas {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 999;
+    font-size: 26px;
+}

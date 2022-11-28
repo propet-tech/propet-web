@@ -20,6 +20,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     let name = this.keycloak.getUsername()
     this.title = `Olá, ${name[0].toUpperCase() + name.toLowerCase().substring(1)}!`
+
+    this.keycloak.getToken().then(
+      r => console.log(r)
+    )
   }
 
   logout(){
