@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './home.component';
 import { ToastrModule } from 'ngx-toastr';
+import { CoreModule } from 'src/app/core/core.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ToastrModule } from 'ngx-toastr';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    ToastrModule
+    ToastrModule,
+    CoreModule
   ]
 })
 export class HomeModule { }

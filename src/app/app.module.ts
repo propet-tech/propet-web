@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './core/components/layout/navbar/navbar.component';
 import { SidebarComponent } from './core/components/layout/sidebar/sidebar.component';
+import { CoreModule } from './core/core.module';
 
 function initializeKeycloak (keycloak: KeycloakService) {
   return () =>
@@ -30,8 +31,6 @@ function initializeKeycloak (keycloak: KeycloakService) {
 @NgModule({
   declarations: [
     AppComponent,
-    SidebarComponent,
-    NavbarComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,6 +39,7 @@ function initializeKeycloak (keycloak: KeycloakService) {
     HttpClientModule,
     ToastrModule.forRoot(),
     KeycloakAngularModule,
+    CoreModule
   ],
   providers: [
     {

@@ -9,16 +9,17 @@ import { Subscriber } from 'rxjs';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-title: string = ''
-name: string = ''
+
+  title: string = ''
+
   constructor(
     private router: Router,
     private keycloak: KeycloakService
   ) { }
 
   ngOnInit(): void {
-  this.name = this.keycloak.getUsername()
-  this.title = `Olá, ${this.name[0].toUpperCase() + this.name.toLowerCase().substring(1)}!`
+    let name = this.keycloak.getUsername()
+    this.title = `Olá, ${name[0].toUpperCase() + name.toLowerCase().substring(1)}!`
   }
 
   logout(){

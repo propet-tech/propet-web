@@ -9,18 +9,22 @@
     z-index: 1001;
     height: 100px;
   }
-  .fe-settings:before {
+
+.fe-settings:before {
     content: "\e8c3";
     color: white;
 }
+
 .dropdown-toggle:empty::after {
     margin-left: 0;
     color: white;
 }
+
 .fe-menu:before {
     content: "\e88f";
     color: white;
 }
+
  h4 {
     font-size: 1.125rem;
     margin-top: 14%;

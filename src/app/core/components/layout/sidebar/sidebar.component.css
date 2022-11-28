@@ -2,6 +2,11 @@ element.style {
     border-radius: 11px;
     margin-top: 40px;
 }
+
+.left-side-menu {
+  top: -50px !important;
+}
+
 *menu-title {
     padding: 10px 20px;
     letter-spacing: .05em;
