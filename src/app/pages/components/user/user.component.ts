@@ -1,22 +1,32 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { Client } from '../../model/client.model';
 import { User } from '../../model/user.model';
+import { ClientService } from '../../service/client.service';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css', '../../../app.component.css']
 })
 export class UserComponent implements OnInit {
-  users: User[] = [
-    { id: 1, name: 'batata', status: true, pet: 'batinha', number: 9 },
-    { id: 2, name: 'henri', status: true, pet: 'fil', number: 1 },
-    { id: 3, name: 'theo', status: true, pet: 'gatinho', number: 9 },
-    { id: 4, name: 'deibi', status: true, pet: 'cachorro', number: 5 }
-  ]
-  constructor() { }
+
+  data: Client[] = []
+
+  constructor(
+    private service: ClientService,
+    // private notification: ToastrService
+  ) {}
 
   ngOnInit(): void {
-    console.log(this.users)
+    this.service.getAll().subscribe(
+      (result) => {
+        this.data = result.content;
+      },
+      (error) => {
+        // this.notification.error(error)
+      }
+    )
   }
 
 }
