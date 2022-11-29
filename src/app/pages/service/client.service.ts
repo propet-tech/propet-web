@@ -7,28 +7,33 @@ import { Page } from "../model/page.model";
 import { Pageable } from "../model/pageable";
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class ClientService {
 
-    constructor(
-        private http: HttpClient
-    ) {}
+  constructor(
+    private http: HttpClient
+  ) { }
 
-    public getAll(params?: Pageable): Observable<Page<Client>> {
-        let httpParams = new HttpParams();
+  public getAll(params?: Pageable): Observable<Page<Client>> {
+    let httpParams = new HttpParams();
 
-        if (params)
-            Object.entries(params).forEach(
-                ([key, value]) => {
-                    httpParams.set(key, value)
-                }
-            );
+    if (params)
+      Object.entries(params).forEach(
+        ([key, value]) => {
+          httpParams.set(key, value)
+        }
+      );
 
-        return this.http.get<Page<Client>>(`${environment.api}/client`, {params: httpParams});
-    }   
+    return this.http.get<Page<Client>>(`${environment.api}/client`, { params: httpParams });
+  }
 
-    getCount(){
-        return this.http.get<number>(`${environment.api}/client/count`)
-    }
+  getCount(): Observable<number> {
+    return this.http.get<number>(`${environment.api}/client/count`)
+  }
+
+  getPetCount(clientId: number) {
+    return this.http.get<number>(`${environment.api}/client/${clientId}/pet/count`)
+  }
+
 }

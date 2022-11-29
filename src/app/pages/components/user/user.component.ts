@@ -27,6 +27,11 @@ export class UserComponent implements OnInit {
         // this.notification.error(error)
       }
     )
+    console.log(this.countPet(1))
+  }
+
+  async countPet(id: number) {
+    return await this.service.getPetCount(id).toPromise()
   }
 
 }
