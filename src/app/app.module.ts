@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './core/components/layout/navbar/navbar.component';
 import { SidebarComponent } from './core/components/layout/sidebar/sidebar.component';
 import { CoreModule } from './core/core.module';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 function initializeKeycloak (keycloak: KeycloakService) {
   return () =>
@@ -41,7 +40,6 @@ function initializeKeycloak (keycloak: KeycloakService) {
     ToastrModule.forRoot(),
     KeycloakAngularModule,
     CoreModule,
-    FontAwesomeModule
   ],
   providers: [
     {
