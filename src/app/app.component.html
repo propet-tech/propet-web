@@ -1,5 +1,11 @@
 <body>
-    <app-sidebar></app-sidebar>
-    <router-outlet>
-    </router-outlet>
+  <app-sidebar></app-sidebar>
+  <div id="wrapper">
+    <div class="content-page" style="margin: 0 0 0 240px;">
+        <div class="content">
+          <app-navbar></app-navbar>
+          <router-outlet></router-outlet>
+        </div>
+    </div>
+  </div>
 </body>
