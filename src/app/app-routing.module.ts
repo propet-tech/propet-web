@@ -18,10 +18,10 @@ const routes: Routes = [
         }
       },
       { 
-        path: 'usuario', 
+        path: 'client', 
         loadChildren: () => import('./pages/components/user/user.module').then(m => m.UserModule),
         data: {
-          name: 'Usuários'
+          name: 'Clientes'
         }
       },
       { 

@@ -24,7 +24,10 @@ export class NavbarComponent implements OnInit {
     this.title = `Olá, ${name[0].toUpperCase() + name.toLowerCase().substring(1)}!`
     this.router.events
       .pipe(filter(event => event instanceof NavigationEnd))
-      .subscribe(() => this.createBreadcrumb(this.active.root));
+      .subscribe(() => {
+        this.breadcrumbList = []
+        this.createBreadcrumb(this.active.root)
+      });
   }
 
   createBreadcrumb(active: ActivatedRoute) {

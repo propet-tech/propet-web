@@ -9,7 +9,8 @@ import { KeycloakService } from 'keycloak-angular';
 export class SidebarComponent implements OnInit {
 
   constructor(
-  ) { }
+    public keycloak: KeycloakService
+  ) {}
 
   ngOnInit(): void {
   }

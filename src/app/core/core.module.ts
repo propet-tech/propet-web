@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
   exports: [
     SidebarComponent,
     NavbarComponent,
-    RegisterComponent
+    RegisterComponent,
   ],
   providers: []
 })
