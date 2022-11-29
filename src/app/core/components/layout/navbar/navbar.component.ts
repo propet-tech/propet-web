@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { KeycloakService } from 'keycloak-angular';
-import { Subscriber } from 'rxjs';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-navbar',
@@ -11,23 +11,31 @@ import { Subscriber } from 'rxjs';
 export class NavbarComponent implements OnInit {
 
   title: string = ''
+  breadcrumbList: string[] = [];
 
   constructor(
-    private router: Router,
-    private keycloak: KeycloakService
+    private keycloak: KeycloakService,
+    private active: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
     let name = this.keycloak.getUsername()
     this.title = `Olá, ${name[0].toUpperCase() + name.toLowerCase().substring(1)}!`
+    this.createBreadcrumb(this.active.root)
+  }
 
-    this.keycloak.getToken().then(
-      r => console.log(r)
+  createBreadcrumb(active: ActivatedRoute) {
+    const children: ActivatedRoute[] = active.children;
+
+    if (children.length === 0) {
+      return
+    }
+
+    children.forEach(
+      child => {
+        this.breadcrumbList.push(child.snapshot.data['name'])
+        return this.createBreadcrumb(child)
+      }
     )
   }
-
-  logout(){
-    this.keycloak.logout();
-  }
-
 }

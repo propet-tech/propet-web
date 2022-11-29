@@ -48,9 +48,9 @@
           <div class="col">
             <div>
               <ol class="breadcrumb" style="margin-left: 43%;">
-                  <li class="breadcrumb-item"><a>Home</a></li>
-                  <li class="breadcrumb-item"><a>usuarios</a></li>
-                  <li class="breadcrumb-item active">listagem usuarios</li>
+                <li *ngFor="let name of breadcrumbList" class="breadcrumb-item">
+                  <a>{{name}}</a>
+                </li>
               </ol>
           </div>
           </div>
