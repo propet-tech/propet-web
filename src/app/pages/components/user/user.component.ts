@@ -58,15 +58,10 @@ export class UserComponent implements OnInit {
     return this.service.getPetCount(id)
   }
 
-  next() {
-
-  }
-
-  previous() {
-    if (this.paginator.current != 0)
-      this.list(this.paginator.current -1) 
-    else
-      this.list(0)
+  delete(id: number) {
+    this.service.delete(id).subscribe(
+      result => this.list(0)
+    )
   }
 }
 

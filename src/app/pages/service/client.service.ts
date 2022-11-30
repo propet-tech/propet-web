@@ -36,4 +36,7 @@ export class ClientService {
     return this.http.get<number>(`${environment.api}/client/${clientId}/pet/count`)
   }
 
+  delete(id: number) {
+    return this.http.delete<void>(`${environment.api}/client/${id}`)
+  }
 }
