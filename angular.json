@@ -39,6 +39,7 @@
               "node_modules/ngx-toastr/toastr.css"
             ],
             "scripts": [
+              "./node_modules/@fortawesome/fontawesome-free/js/all.js",
               "node_modules/jquery/dist/jquery.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.js",
               "src/assets/js/app.min.js",
@@ -66,7 +67,6 @@
               "src/assets/js/pages/dragula.init.js",
               "src/assets/js/pages/ecommerce-dashboard.init.js",
               "src/assets/js/pages/flot.init.js",
-              "src/assets/js/pages/fontawesome.init.js",
               "src/assets/js/pages/foo-tables.init.js",
               "src/assets/js/pages/form-advanced.init.js",
               "src/assets/js/pages/form-fileuploads.init.js",
