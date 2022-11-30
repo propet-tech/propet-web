@@ -23,7 +23,7 @@
                         <td>{{client.name}}</td>
                         <td>{{client.cpf}}</td>
                         <td>{{client.email}}</td>
-                        <td class="text-center">{{client.petNumber}}</td>
+                        <td class="text-center">{{ client.petNumber | async }}</td>
                         <td>
                           <div class="row">
                             <div class="col col_text">
@@ -62,27 +62,28 @@
 
                 </table>
               </div> <!-- end table responsive-->
-              <div class="row">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </li>
-                </ul>
-              </div>
             </div> <!-- collapsed end -->
+            <div class="row">
+              <ul class="pagination justify-content-center">
+                <li class="page-item" [ngClass]="{'disabled': paginator.current == 0}">
+                  <button class="page-link" (click)="list(paginator.current - 1)" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                  </button>
+                </li>
 
+                <li class="page-item" [ngClass]="{'active': i === paginator.current}" *ngFor="let page of paginator.totalPages; let i = index">
+                    <button class="page-link" (click)="list(i)">{{ (i + 1) }}</button>
+                </li>
+
+                <li class="page-item" [ngClass]="{'disabled': paginator.current == (paginator.totalPages.length - 1)}">
+                  <button class="page-link" (click)="list(paginator.current + 1)" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                  </button>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>

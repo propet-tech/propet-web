@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { Observable } from 'rxjs';
 import { Client } from '../../model/client.model';
 import { User } from '../../model/user.model';
 import { ClientService } from '../../service/client.service';
@@ -11,27 +12,73 @@ import { ClientService } from '../../service/client.service';
 })
 export class UserComponent implements OnInit {
 
-  data: Client[] = []
+  data: Line[] = []
+
+  paginator: Paginator = {
+    current: 0,
+    totalPages: []
+  };
 
   constructor(
     private service: ClientService,
     // private notification: ToastrService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
-    this.service.getAll().subscribe(
+    this.list(0)
+  }
+
+  list(page: number) {
+    this.service.getAll(
+      { page: page }
+    ).subscribe(
       (result) => {
-        this.data = result.content;
+        let data: Line[] = result.content.map(
+          e => {
+            return {
+              name: e.name,
+              cpf: e.cpf,
+              id: e.id,
+              email: e.email,
+              petNumber: this.getPetCount(e.id)
+            }
+          }
+        )
+        this.data = data;
+        this.paginator.totalPages = new Array(result.totalPages)
+        this.paginator.current = result.number;
       },
       (error) => {
         // this.notification.error(error)
       }
     )
-    console.log(this.countPet(1))
   }
 
-  async countPet(id: number) {
-    return await this.service.getPetCount(id).toPromise()
+  getPetCount(id: number): Observable<number> {
+    return this.service.getPetCount(id)
   }
 
+  next() {
+
+  }
+
+  previous() {
+    if (this.paginator.current != 0)
+      this.list(this.paginator.current -1) 
+    else
+      this.list(0)
+  }
+}
+
+interface Line {
+  name: string;
+  cpf: string;
+  id: number;
+  email: string;
+  petNumber: Observable<number>
+}
+
+interface Paginator {
+  current: number,
+  totalPages: number[]
 }

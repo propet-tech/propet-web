@@ -21,7 +21,7 @@ export class ClientService {
     if (params)
       Object.entries(params).forEach(
         ([key, value]) => {
-          httpParams.set(key, value)
+          httpParams = httpParams.set(key, value)
         }
       );
 
