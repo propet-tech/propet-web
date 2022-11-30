@@ -15,7 +15,7 @@ import { CoreModule, KeycloakBearerInterceptor } from 'keycloak-angular';
     CommonModule,
     UserRoutingModule,
     MatTableModule,
-    CoreModule
+    CoreModule,
   ],
 })
 export class UserModule { }

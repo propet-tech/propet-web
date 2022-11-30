@@ -21,7 +21,7 @@ export class UserComponent implements OnInit {
 
   constructor(
     private service: ClientService,
-    // private notification: ToastrService
+    private notification: ToastrService
   ) { }
 
   ngOnInit(): void {
@@ -60,7 +60,13 @@ export class UserComponent implements OnInit {
 
   delete(id: number) {
     this.service.delete(id).subscribe(
-      result => this.list(0)
+      result => {
+        this.list(0)
+        this.notification.success("Usuario deletado!", 'Sucesso')
+      },
+      error => {
+        this.notification.error(error.error.message, 'ERROR!')
+      }
     )
   }
 }
