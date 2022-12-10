@@ -6,6 +6,7 @@ import { ServiceFormComponent } from './service-form/service-form.component';
 import { ServiceEditComponent } from './service-edit/service-edit.component';
 import { ServiceListComponent } from './service-list/service-list.component';
 import { CoreModule } from 'keycloak-angular';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,9 @@ import { CoreModule } from 'keycloak-angular';
   imports: [
     CommonModule,
     ServiceRoutingModule,
-    CoreModule
+    CoreModule,
+    ReactiveFormsModule,
+    FormsModule
   ]
 })
 export class ServiceModule { }

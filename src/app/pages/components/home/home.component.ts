@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ClientService } from '../../service/client.service';
 import { PetService } from '../../service/pet.service';
+import * as moment from 'moment'
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ import { PetService } from '../../service/pet.service';
 export class HomeComponent implements OnInit {
   countPet: number = 0;
   countClient: number = 0;
+  dateDay: string = ''
   constructor(
     private notification: ToastrService,
     private petService: PetService,
@@ -21,6 +23,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(){ 
     this.loadPet()
     this.loadClient()
+    this.dateDay = moment().format('DD/MM');
   }
   loadPet(){
     this.petService.getCountPet().subscribe(

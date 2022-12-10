@@ -12,36 +12,17 @@
                               <div div class="card">
                                   <div class="card-body">
                                       <form [formGroup]="userForm">
-                                        <div class="row">
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                    <h6 class="h6_">Ativo</h6>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="name">
-                                                  </div><br>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                    <h6 class="h6_">ID Usuario</h6>
-                                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="cpf">
-                                                  </div><br>
-                                            </div>
-                                            <div class="col-4">
-                                                <div class="form-group">
-                                                    <h6 class="h6_">ID do pet</h6>
-                                                    <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="cpf">
-                                                  </div><br>
-                                            </div>                                    
-                                        </div>
                                           <div class="row">
                                               <div class="col-6">
                                                   <div class="form-group">
-                                                      <h6 class="h6_">Saida</h6>
+                                                      <h6 class="h6_">Nome do Usuario</h6>
                                                       <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="name">
                                                     </div><br>
+      
                                               </div>
                                               <div class="col-6">
                                                   <div class="form-group">
-                                                      <h6 class="h6_">Entrada</h6>
+                                                      <h6 class="h6_">CPF</h6>
                                                       <input type="number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="cpf">
                                                     </div><br>
                                               </div>
@@ -50,7 +31,7 @@
                                           <div class="row">
                                               <div class="col">
                                                   <div class="form-group">
-                                                      <h6 class="h6_">Descrição</h6>
+                                                      <h6 class="h6_">E-mail</h6>
                                                       <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Informe seu Nome" autocomplete="false" formControlName="email">
                                                     </div><br>
                                               </div>        
@@ -61,7 +42,7 @@
                                       <div class="col-lg-0">
                                           <div class="d-flex flex-wrap align-items-center">
                                               <div class="col-sm-2 d-flex flex-row">
-                                                  <a  class="btn btn-primary d-flex justify-content-center align-items-center m-1">
+                                                  <a  (click)="black()" class="btn btn-primary d-flex justify-content-center align-items-center m-1">
                                                       <svg style="margin-right: .5rem;" xmlns="http://www.w3.org/2000/svg"
                                                           width="16" height="16" fill="currentColor"
                                                           class="bi bi-chevron-left mr-2" viewBox="0 0 16 16">
@@ -69,7 +50,7 @@
                                                       </svg>
                                                       Voltar
                                                   </a>
-                                                  <button  class="btn btn-danger d-flex justify-content-center align-items-center m-1">
+                                                  <button (click)="create()" class="btn btn-danger d-flex justify-content-center align-items-center m-1">
                                                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                                           fill="currentColor" class="bi bi-device-ssd-fill"
                                                           viewBox="0 0 16 16">

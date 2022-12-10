@@ -24,4 +24,7 @@ export class PetService {
   getCountPet(){
     return this.http.get<number>(`${environment.api}/pet/count`)
   }
+  getBreed(){
+    return this.http.get<number>(`${environment.api}/breed`)
+  }
 }

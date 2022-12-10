@@ -11,6 +11,7 @@ import { PetService } from 'src/app/pages/service/pet.service';
 })
 export class PetFormComponent implements OnInit {
   PetForm: any = ''
+  breed: any[] = []
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -20,6 +21,7 @@ export class PetFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.buildPetForm() 
+    this.getBread()
   }
   buildPetForm() {
     this.PetForm = this.formBuilder.group({
@@ -40,11 +42,15 @@ export class PetFormComponent implements OnInit {
     this.router.navigate(['pet'])
   }
   create(){
-    console.log(this.PetForm.value)
    this.petService.create(this.PetForm.value).subscribe(
       (response) => {this.back(), this.notification.success(`Pet ${this.PetForm.value.name }criado`, 'Sucesso')},
       error => {debugger}
     )
-  
+}
+getBread(){
+    this.petService.getBreed().subscribe(
+        (response: any) => {console.log(response.content)},
+         error => { debugger}
+      )
 }
 }

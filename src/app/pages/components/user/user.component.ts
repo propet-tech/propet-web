@@ -59,6 +59,7 @@ export class UserComponent implements OnInit {
   }
 
   delete(id: number) {
+    console.log(id)
     this.service.delete(id).subscribe(
       result => {
         this.list(0)

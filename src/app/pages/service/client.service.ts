@@ -31,6 +31,15 @@ export class ClientService {
   getCount(): Observable<number> {
     return this.http.get<number>(`${environment.api}/client/count`)
   }
+  createUser(user: any){
+      return this.http.post<any>(`${environment.api}/client`, user)
+  }
+  updateUser(user: any){
+    return this.http.put<any>(`${environment.api}/client`, user)
+}
+  getByID(id: any){
+    return this.http.get<any>(`${environment.api}/client/${id}`)
+}
 
   getPetCount(clientId: number) {
     return this.http.get<number>(`${environment.api}/client/${clientId}/pet/count`)

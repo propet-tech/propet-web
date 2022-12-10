@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service-form.component.css']
 })
 export class ServiceFormComponent implements OnInit {
-
+  userForm: any = ''
   constructor() { }
 
   ngOnInit(): void {
